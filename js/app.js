@@ -26,8 +26,12 @@ var app = new Vue({
     ],
     selectedVariation: 0,
     redButton: { backgroundColor: 'red' },
-    tabs: ['Features', 'Specs'],
-    selectedTab: 'Features'
+    tabs: ['Features', 'Specs', 'Comments'],
+    selectedTab: 'Features',
+    yourName: null,
+    yourComment: null,
+    comments: [],
+    errors: []
   },
   computed: {
     title: function () {
@@ -40,6 +44,10 @@ var app = new Vue({
   methods: {
     updateProduct: function (index) {
       this.selectedVariation = index
+    },
+    commentSubmit: function (event) {
+      event.preventDefault()
+      console.log(this.yourName + ': ' + this.yourComment)
     }
   }
 })

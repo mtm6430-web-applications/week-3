@@ -69,6 +69,23 @@
               </dd>
             </dl>
           </section>
+          <section v-show="selectedTab === 'Comments'">
+            <ul class="list-group">
+              <li class="list-group-item">Comment 1</li>
+              <li class="list-group-item">Comment 2</li>
+            </ul>
+            <form @submit="commentSubmit">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input v-model="yourName" type="text" class="form-control" id="name">
+              </div>
+              <div class="form-group">
+                <label for="comment">Comment</label>
+                <textarea v-model="yourComment" id="comment" class="form-control"></textarea>
+              </div>
+              <input type="submit" value="Submit">
+            </form>
+          </section>
       </div>
     </div>
     
